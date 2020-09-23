@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -6,6 +6,34 @@
     <title></title>
 </head>
 <body>
+    
+       
+            <input id="firstname" type="text">
+            <input  id="lastname" type="text">
+            <input  id="age" type="number">
+            <button id="submit">submit</button>
+        
+        <div id="result">
+        </div>
+    <script>
+        function takevalue() {
+            var firstname = document.getElementById("firstname").value;
+            var lastname = document.getElementById("lastname").value;
+            var age = document.getElementById("age").value;
+            var myname = 'my name is <span id="fname">' + firstname + '</span>  ' + lastname + ' ' + age;
 
+            document.getElementById("result").innerHTML = myname;
+            if (firstname.length > 5) {
+                document.getElementById("fname").style.color = "green";
+            } else {
+                document.getElementById("fname").style.color = "red";
+            }
+        
+      
+            return myname;
+        }
+        document.getElementById("submit").addEventListener("click", takevalue, false);
+    </script>
+    
 </body>
 </html>
