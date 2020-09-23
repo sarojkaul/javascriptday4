@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+  </head>
+  <body>
+    <input id="firstname" type="text" />
+    <input id="lastname" type="text" />
+    <input id="age" type="number" />
+    <select id="select">
+      <option value="hospitality">Hospitality</option>
+      <option value="IT">IT</option>
+    </select>
+    <button id="submit">submit</button>
+
+    <div id="result"></div>
+    <script>
+      function takevalue() {
+        var firstname = document.getElementById('firstname').value;
+        var lastname = document.getElementById('lastname').value;
+        var age = document.getElementById('age').value;
+        var profession = document.getElementById('select').value;
+
+        var myname =
+          'my name is <span id="fname">' +
+          firstname +
+          '  </span>' +
+          lastname +
+          ' and I am ' +
+          age +
+          ' years old and I work in ' +
+          profession +
+          ' .';
+        document.getElementById('result').innerHTML = myname;
+        if (firstname.length > 5) {
+          document.getElementById('fname').style.color = 'green';
+        } else {
+          document.getElementById('fname').style.color = 'red';
+        }
+
+        if (profession == 'hospitality') {
+          document.getElementById('result').style.backgroundColor = 'purple';
+        } else {
+          document.getElementById('result').style.backgroundColor = 'green';
+        }
+
+        return myname;
+      }
+      function jobSelector() {
+        var select = document.getElementById('select').value;
+        console.log(select);
+      }
+
+      document
+        .getElementById('submit')
+        .addEventListener('click', takevalue, false);
+    </script>
+  </body>
+</html>
